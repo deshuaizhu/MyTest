@@ -1,7 +1,5 @@
 package com.che168.mytest;
 
-import android.app.ActivityManager;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -44,17 +42,4 @@ public class MainActivity extends AppCompatActivity {
 		navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 	}
 
-
-	@Override
-	public void onBackPressed() {
-		try{
-			finish();
-			ActivityManager activityMgr = (ActivityManager)
-					getSystemService(Context.ACTIVITY_SERVICE);
-			activityMgr.killBackgroundProcesses(getPackageName());
-			System.exit(0);
-		}catch (Exception e){
-			System.exit(0);
-		}
-	}
 }
